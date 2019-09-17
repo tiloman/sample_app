@@ -1,0 +1,16 @@
+<% provide(:title, "Profil bearbeiten") %>
+<% provide(:button_text, 'Änderungen speichern') %>
+
+<h1>Bearbeite dein Profil</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+    <%= render 'users/form' %>
+
+    <div class="gravatar_edit">
+      <%= gravator_for(@user) %>
+      <a href="http://gravatar.com/emails" target="_blank" rel='noopener'>ändern</a>
+    </div>
+  </div>
+</div>
