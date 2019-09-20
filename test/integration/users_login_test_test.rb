@@ -39,4 +39,14 @@ class UsersLoginTestTest < ActionDispatch::IntegrationTest
     assert_empty cookies[:remember_token]
   end
 
+  test 'friendly forwarding should only work once' do
+    get edit_user_path(@user)
+    assert_redirected_to login_path
+    assert_not flash.empty?
+    log_in_as(@user)
+    assert_redirected_to edit_user_url(@user)
+    log_in_as(@user)
+    assert_redirected_to @user
+  end
+
 end
