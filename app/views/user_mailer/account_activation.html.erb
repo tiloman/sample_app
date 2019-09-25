@@ -2,6 +2,6 @@
 
 <p>Hi <%= @user.name %>,</p>
 
-<p>Willkommen bei der Sample APp. Klicke auf den Link unten, um deinen Account zu aktivieren:</p>
+<p>Willkommen bei der Sample App. Klicke auf den Link unten, um deinen Account zu aktivieren:</p>
 
 <%= link_to 'Aktivieren', edit_account_activation_url(@user.activation_token, email: @user.email) %>

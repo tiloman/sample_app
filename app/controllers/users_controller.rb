@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @user.send_activation_email
-      flash[:info] = 'Bitte überprüfen Sie ihr Postfach um den Account !'
+      flash[:info] = 'Bitte überprüfe dein Postfach um den Account zu aktivieren!'
       redirect_to root_url
     else
       render 'new'
